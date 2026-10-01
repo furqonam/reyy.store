@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>reyystore.id</title>
+<meta name="description" content="REYY STORE — Premium digital key store. Instant delivery, 24/7 support, 100% secure.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/webp" href="logo.webp">
+<link rel="preload" as="image" href="logo.webp" fetchpriority="high">
+<link rel="preload" as="image" href="welcome-rs.webp" fetchpriority="high">
+
+<script>
+(function(){
+  let frames=0,lastTime=performance.now(),rate=60;
+  function check(now){
+    frames++;
+    if(now-lastTime>=1000){
+      rate=frames;
+      document.documentElement.dataset.refreshRate=rate;
+      if(rate>=90)document.documentElement.classList.add("high-refresh");
+      if(rate>=120)document.documentElement.classList.add("ultra-refresh");
+      return;
+    }
+    requestAnimationFrame(check);
+  }
+  requestAnimationFrame(check);
+})();
+</script>
+
+<style>
+/* ========== RESET & VARIABLES ========== */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --font-system:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  --glass-border:rgba(100,180,255,.15);
+  --glass-border-hover:rgba(120,200,255,.45);
+  --cyan:#4dd0ff;--cyan-2:#7ee0ff;--blue:#2e8fff;--aqua:#a0e8ff;
+  --text:#e8f4ff;--text-dim:#8ab0d0;--text-dim-2:#557a9a;
+  --green:#22c55e;--red:#ef4444;--gold:#ffc847;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:var(--font-system);color:var(--text);line-height:1.5;
+  overflow-x:hidden;padding-bottom:80px;min-height:100vh;
+  background:#000;
+}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.is-hidden{display:none!important}
+
+/* ========== HEADER ========== */
+.header{
+  position:sticky;top:0;z-index:100;background:#000;
+  border-bottom:1px solid rgba(100,180,255,.15);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-img{
+  width:50px;height:50px;border-radius:14px;object-fit:cover;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;overflow:hidden;
+}
+.logo-text-img{height:50px;width:auto;object-fit:contain}
+@media(max-width:640px){.logo-text-img{height:42px}.logo-img{width:42px;height:42px;border-radius:12px}}
+@media(max-width:380px){.logo-text-img{height:36px}.logo-img{width:38px;height:38px}}
+.header-actions{display:flex;align-items:center;gap:10px}
+.icon-btn{
+  width:40px;height:40px;border-radius:12px;
+  background:rgba(30,120,220,.12);border:1px solid var(--glass-border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;cursor:pointer;color:var(--text);
+  transition:background .1s linear,border-color .1s linear;
+}
+.icon-btn:hover{border-color:var(--glass-border-hover);background:rgba(30,120,220,.2)}
+.icon-btn.user{
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  border:none;color:#001a2e;font-weight:800;
+}
+.icon-btn.user svg{
+  width:20px;height:20px;
+  stroke:currentColor;fill:none;
+  stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+}
+
+/* ========== BANNER ========== */
+.banner-section{padding:16px 0}
+.banner{
+  position:relative;border-radius:24px;overflow:hidden;
+  aspect-ratio:3053/2160;max-height:720px;background:#000;
+  border:1px solid var(--glass-border);
+  display:flex;align-items:center;justify-content:center;
+}
+.banner-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;z-index:0;pointer-events:none;
+}
+@media(max-width:640px){.banner{border-radius:18px}}
+
+/* ========== SECTION HEAD ========== */
+.section-head{display:flex;align-items:center;gap:10px;padding:24px 0 16px}
+.section-head::before{
+  content:'';width:8px;height:8px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 12px var(--cyan);flex-shrink:0;
+}
+.section-head h2{
+  font-size:1rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  background:linear-gradient(135deg,#fff,var(--cyan-2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ========== SEARCH & FILTER ========== */
+.search-wrap{position:relative;margin-bottom:14px}
+.search-input{
+  width:100%;padding:14px 20px 14px 44px;border-radius:100px;
+  background:rgba(30,120,220,.1);border:1px solid var(--glass-border);
+  color:var(--text);font-family:inherit;font-size:1rem;outline:none;
+  transition:border-color .15s linear,background .15s linear;
+}
+.search-input:focus{border-color:var(--glass-border-hover);background:rgba(30,120,220,.18)}
+.search-input::placeholder{color:var(--text-dim-2)}
+.search-wrap::before{
+  content:'🔍';position:absolute;left:16px;top:50%;
+  transform:translateY(-50%);font-size:1rem;pointer-events:none;
+}
+.filter-bar{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;
+  margin-bottom:20px;scrollbar-width:none;
+}
+.filter-bar::-webkit-scrollbar{display:none}
+.filter-btn{
+  padding:10px 22px;border-radius:100px;
+  background:rgba(30,120,220,.1);border:1px solid var(--glass-border);
+  color:var(--text-dim);font-family:inherit;font-weight:700;font-size:1rem;
+  cursor:pointer;white-space:nowrap;
+  transition:background .1s linear,border-color .1s linear,color .1s linear;
+}
+.filter-btn:hover{border-color:var(--glass-border-hover);color:var(--text);background:rgba(30,120,220,.18)}
+.filter-btn.active{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#001a2e;border-color:transparent}
+
+/* ========== PRODUCT GRID & CARD ========== */
+.product-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;padding-bottom:40px;align-items:stretch;
+}
+@media(min-width:640px){.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:900px){.product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.product-card{
+  background:rgba(30,120,220,.08);border:1px solid rgba(160,232,255,.2);
+  border-radius:18px;overflow:hidden;cursor:pointer;position:relative;
+  display:flex;flex-direction:column;height:100%;
+  transition:border-color .15s linear,background .15s linear;
+}
+.product-card:hover{
+  border-color:var(--glass-border-hover);
+  background:rgba(30,120,220,.15);
+}
+.product-thumb{
+  aspect-ratio:1;
+  background:linear-gradient(135deg,rgba(10,30,60,.4) 0%,rgba(0,10,25,.6) 100%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(100,180,255,.15);flex-shrink:0;
+}
+.product-thumb-img{
+  width:100%;height:100%;object-fit:cover;
+  position:relative;z-index:2;transition:transform .25s linear;
+}
+.product-card:hover .product-thumb-img{transform:scale(1.05)}
+.product-thumb-fallback{font-size:2.8rem;position:relative;z-index:2}
+.product-info{
+  padding:10px 12px 14px;position:relative;z-index:2;
+  display:flex;flex-direction:column;flex:1;
+}
+.product-name-row{display:flex;align-items:center;gap:4px;margin-bottom:6px}
+.product-name{
+  font-size:.85rem;font-weight:800;color:var(--text);line-height:1.2;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+
+/* ========== CENTANG BIRU (VERIFY) ========== */
+.verify-wrap{
+  position:relative;display:inline-flex;flex-shrink:0;line-height:0;
+  width:13px;height:13px;overflow:hidden;border-radius:50%;
+}
+.verify-wrap .verify-check{width:100%;height:100%;display:block;position:relative;z-index:2}
+.verify-wrap::after{
+  content:'';position:absolute;top:0;left:-150%;width:70%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.95) 50%,transparent);
+  animation:shimmer 2.5s linear infinite;pointer-events:none;z-index:3;
+}
+@keyframes shimmer{
+  0%{transform:translateX(0)}
+  40%{transform:translateX(400%)}
+  100%{transform:translateX(400%)}
+}
+.review-card .verify-wrap::after{display:none}
+.breakdown-avg .verify-wrap::after,
+.breakdown-star-label .verify-wrap::after,
+.breakdown-item-badge .verify-wrap::after{display:none}
+
+/* ========== RATING ROW ========== */
+.product-rating-row{
+  display:flex;align-items:center;gap:4px;margin-bottom:10px;
+  font-size:.85rem;line-height:1;
+}
+.product-rating-row .svg-star-wrap{display:inline-block;vertical-align:middle;transform:translateY(-1.5px)}
+.rating-text{
+  color:var(--text-dim);font-size:.75rem;line-height:1;
+  display:inline-flex;align-items:center;
+}
+
+/* ========== STATUS ROW ========== */
+.product-status-row{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.status-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0;
+}
+.status-dot.offline{background:var(--red);box-shadow:0 0 8px var(--red)}
+.status-text{font-size:.7rem;font-weight:700;color:var(--green)}
+.status-text.offline{color:var(--red)}
+
+/* ========== BEST SELLER BADGE ========== */
+.badge-row{position:absolute;top:8px;left:8px;z-index:5;margin:0}
+.mini-badge{
+  padding:4px 10px;border-radius:6px;
+  font-size:.58rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+}
+.mini-badge.best{
+  background:rgba(10,40,90,.95);color:var(--cyan);
+  border:1px solid rgba(77,208,255,.5);
+  display:inline-flex;align-items:center;gap:4px;
+}
+
+/* ========== PRICE ========== */
+.product-price-row{
+  display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  padding-top:5px;border-top:1px solid rgba(100,180,255,.15);margin-top:auto;
+}
+.price-label{font-size:.5rem;color:var(--text-dim);letter-spacing:.5px}
+.price-value{
+  font-size:1.2rem;font-weight:900;
+  background:linear-gradient(135deg,var(--cyan),var(--aqua));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  white-space:nowrap;font-variant-numeric:tabular-nums;
+}
+
+/* ========== SVG STAR ========== */
+.svg-star{width:1em;height:1em;display:inline-block;vertical-align:middle;flex-shrink:0}
+.svg-star path{fill:url(#goldGradient)}
+.svg-star-wrap{
+  position:relative;display:inline-block;vertical-align:middle;line-height:0;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+.svg-star-wrap .svg-star{display:block}
+.svg-star-wrap::after{
+  content:'';position:absolute;top:0;left:-150%;width:70%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.95) 50%,transparent);
+  animation:shimmer 2.5s linear infinite;pointer-events:none;
+}
+.review-card .svg-star-wrap::after{display:none}
+.breakdown-avg .svg-star-wrap::after,
+.breakdown-star-label .svg-star-wrap::after,
+.breakdown-item-badge .svg-star-wrap::after{display:none}
+.review-card-rating .svg-star{width:.95em;height:.95em}
+.breakdown-avg .svg-star{width:.7em;height:.7em;display:block}
+.breakdown-avg .svg-star-wrap{display:inline-flex;align-items:center;justify-content:center;line-height:1}
+.breakdown-star-label .svg-star,.breakdown-item-badge .svg-star{width:.85em;height:.85em}
+
+/* ========== TESTIMONIAL SECTION ========== */
+.testi-section{padding:30px 0}
+.testi-box{
+  border-radius:20px;padding:18px;background:rgba(30,120,220,.06);
+  border:1px solid rgba(100,180,255,.2);position:relative;overflow:hidden;
+}
+.testi-header{
+  display:flex;align-items:center;gap:14px;padding:14px;margin-bottom:16px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(46,143,255,.15),rgba(77,208,255,.08));
+  border:1px solid rgba(120,200,255,.25);
+}
+.testi-header-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;color:#001a2e;flex-shrink:0;
+}
+.testi-header-content{flex:1;min-width:0}
+.testi-header-title{
+  font-size:.95rem;font-weight:900;color:var(--text);
+  letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px;
+}
+.testi-header-rating-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.testi-header-stars{display:inline-flex;align-items:center;gap:2px;font-size:1.1rem;line-height:1}
+.testi-header-score{font-size:.8rem;font-weight:800;color:var(--cyan);line-height:1}
+.testi-header-total{text-align:right;flex-shrink:0}
+.testi-header-count{font-size:1.15rem;font-weight:900;color:var(--text);line-height:1.1;letter-spacing:-.5px}
+.testi-header-label{
+  font-size:.6rem;font-weight:800;color:var(--text-dim);
+  letter-spacing:1px;text-transform:uppercase;margin-top:2px;
+}
+
+/* ========== REVIEW MARQUEE ========== */
+.review-scroll-viewport{
+  position:relative;overflow:hidden;border-radius:14px;cursor:grab;
+  -webkit-mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent);
+}
+.review-scroll-viewport:active{cursor:grabbing}
+.review-scroll{
+  display:flex;gap:12px;will-change:transform;
+  transform:translate3d(0,0,0);
+  align-items:stretch;
+}
+.review-card{
+  flex:0 0 260px;min-width:260px;
+  background:rgba(20,50,100,.35);border:1px solid rgba(160,232,255,.2);
+  border-radius:14px;padding:14px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.review-card-top{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:8px;position:relative;z-index:1;
+}
+.review-card-rating{
+  color:var(--gold);font-size:.85rem;font-weight:800;
+  display:inline-flex;align-items:center;gap:4px;line-height:1;
+}
+.review-card-time{font-size:.65rem;color:var(--text-dim-2);font-weight:600}
+.review-card-product{
+  display:inline-flex;align-items:center;gap:4px;padding:3px 8px;
+  border-radius:6px;background:rgba(30,120,220,.15);color:var(--cyan);
+  font-size:.6rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.5px;margin-bottom:8px;position:relative;z-index:1;
+  align-self:flex-start;width:fit-content;
+}
+.review-card-text{
+  font-size:.82rem;color:var(--text);line-height:1.5;
+  margin-bottom:12px;position:relative;z-index:1;
+}
+.review-card-text-last{margin-bottom:0}
+.review-card-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:8px;position:relative;z-index:1;margin-top:auto;
+}
+.review-author{display:flex;align-items:center;gap:8px;min-width:0}
+.review-avatar{
+  width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(77,208,255,.3),rgba(46,143,255,.25));
+  border:1px solid rgba(120,200,255,.35);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;color:var(--cyan);font-size:.75rem;flex-shrink:0;
+}
+.review-author-name{
+  font-size:.72rem;font-weight:800;color:var(--text);
+  display:flex;align-items:center;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap;
+}
+.review-likes{
+  color:var(--text-dim);font-size:.8rem;
+  display:inline-flex;align-items:center;gap:2px;line-height:1;
+}
+.review-likes svg{width:10px;height:10px;flex-shrink:0;transition:color .2s linear}
+.review-card:hover .review-likes svg{color:var(--cyan)}
+
+/* ========== SHOW ALL REVIEWS BTN ========== */
+.show-all-reviews-btn{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  width:100%;margin-top:14px;padding:12px;
+  background:rgba(30,120,220,.1);border:1px solid var(--glass-border);
+  border-radius:12px;color:var(--cyan);font-family:inherit;
+  font-weight:800;font-size:.85rem;cursor:pointer;
+  transition:background .1s linear,border-color .1s linear;
+}
+.show-all-reviews-btn:hover{border-color:var(--glass-border-hover);background:rgba(30,120,220,.2)}
+
+/* ========== BREAKDOWN ========== */
+.breakdown-summary{
+  background:rgba(30,120,220,.1);border:1px solid rgba(160,232,255,.2);
+  border-radius:16px;padding:16px;margin-bottom:16px;text-align:center;
+}
+.breakdown-avg{
+  font-size:2.4rem;font-weight:900;
+  background:linear-gradient(135deg,var(--cyan),var(--aqua));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;margin-bottom:6px;
+  display:inline-flex;align-items:center;justify-content:center;gap:4px;
+}
+.breakdown-avg .star-icon{display:inline-flex;align-items:center;justify-content:center;line-height:1}
+.breakdown-label{
+  font-size:.75rem;font-weight:800;color:var(--text-dim);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;
+}
+.breakdown-count{font-size:.75rem;color:var(--text-dim-2);margin-bottom:14px}
+.breakdown-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.breakdown-star-label{
+  font-size:.75rem;font-weight:800;color:var(--text);width:40px;
+  flex-shrink:0;display:inline-flex;align-items:center;
+  justify-content:flex-start;gap:2px;line-height:1;
+}
+.breakdown-bar-track{
+  flex:1;height:6px;border-radius:100px;
+  background:rgba(30,120,220,.2);overflow:hidden;
+}
+.breakdown-bar-fill{
+  height:100%;border-radius:100px;
+  background:linear-gradient(90deg,var(--cyan),var(--blue));
+  transition:width .4s linear;
+}
+.breakdown-num{
+  font-size:.72rem;font-weight:800;color:var(--text-dim);
+  width:26px;text-align:right;flex-shrink:0;
+}
+.breakdown-list{
+  max-height:320px;overflow-y:auto;margin-top:4px;
+}
+.breakdown-item{padding:12px 0;border-bottom:1px solid rgba(100,180,255,.12)}
+.breakdown-item:last-child{border-bottom:none}
+.breakdown-item-top{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:8px;margin-bottom:8px;
+}
+.breakdown-item-author{display:flex;align-items:center;gap:10px;min-width:0}
+.breakdown-item-badge{
+  padding:3px 8px;border-radius:6px;background:rgba(34,197,94,.15);
+  color:var(--green);font-size:.65rem;font-weight:800;
+  border:1px solid rgba(34,197,94,.4);white-space:nowrap;
+  flex-shrink:0;display:inline-flex;align-items:center;gap:3px;
+}
+.breakdown-item-meta{font-size:.65rem;color:var(--text-dim-2);margin-top:2px}
+
+/* ========== MULTI-STEP MODAL ========== */
+.step-indicator{
+  display:flex;align-items:center;justify-content:center;gap:0;margin:4px 0 20px;
+}
+.step-item{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0}
+.step-dot{
+  width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;font-weight:900;background:rgba(30,120,220,.15);
+  border:1px solid var(--glass-border);color:var(--text-dim);
+  transition:background .15s linear;
+}
+.step-dot.active{
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#001a2e;border-color:transparent;
+}
+.step-dot.done{
+  background:rgba(34,197,94,.2);color:var(--green);
+  border-color:rgba(34,197,94,.5);
+}
+.step-label{
+  font-size:.55rem;font-weight:800;letter-spacing:1px;
+  text-transform:uppercase;color:var(--text-dim);
+}
+.step-line{
+  width:30px;height:2px;border-radius:100px;
+  background:rgba(30,120,220,.2);margin:0 4px 18px;flex-shrink:0;
+}
+@media(max-width:380px){.step-line{width:20px}.step-dot{width:28px;height:28px;font-size:.75rem}}
+.step-panel{display:none}
+.step-panel.active{display:block}
+.loading-state{text-align:center;padding:30px 0}
+.loading-state p{font-size:.85rem;color:var(--text-dim)}
+.loading-state .spinner{width:32px;height:32px;border-width:3px;margin:0 auto 16px}
+
+/* ========== DURATION CARD ========== */
+.duration-card-list{display:flex;flex-direction:column;gap:8px}
+.duration-card{
+  display:flex;align-items:center;gap:12px;padding:12px 14px;
+  background:rgba(30,120,220,.06);border:1px solid var(--glass-border);
+  border-radius:12px;cursor:pointer;position:relative;
+  transition:background .1s linear,border-color .1s linear;
+}
+.duration-card:hover{border-color:rgba(120,200,255,.5);background:rgba(30,120,220,.12)}
+.duration-card.selected{
+  border-color:var(--cyan);
+  background:linear-gradient(135deg,rgba(77,208,255,.15),rgba(46,143,255,.1));
+}
+.duration-card.selected::before{
+  content:'✓';position:absolute;top:8px;right:10px;
+  color:var(--cyan);font-size:.7rem;font-weight:900;
+}
+.duration-card.disabled{opacity:.5;cursor:not-allowed}
+.duration-card-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(77,208,255,.15);border:1px solid rgba(120,200,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--cyan);font-size:.9rem;flex-shrink:0;
+}
+.duration-card-info{flex:1;min-width:0}
+.duration-card-label{font-size:.85rem;font-weight:800;color:var(--text)}
+.duration-card-sub{font-size:.65rem;color:var(--text-dim-2);margin-top:2px}
+.duration-card-stock{
+  font-size:.65rem;font-weight:800;color:var(--green);
+  padding:3px 8px;border-radius:6px;background:rgba(34,197,94,.12);
+  border:1px solid rgba(34,197,94,.3);flex-shrink:0;
+}
+.duration-card-stock.out{
+  color:var(--red);background:rgba(239,68,68,.12);
+  border-color:rgba(239,68,68,.3);
+}
+.duration-card-price{
+  font-size:.9rem;font-weight:900;
+  background:linear-gradient(135deg,var(--cyan),var(--aqua));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  flex-shrink:0;
+}
+.duration-card-chevron{color:var(--text-dim);font-size:.75rem;flex-shrink:0}
+
+/* ========== QTY CONTROL ========== */
+.qty-group{margin-top:14px;display:none}
+.qty-group.show{display:block}
+.qty-control{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:rgba(30,120,220,.08);
+  border:1px solid var(--glass-border);border-radius:12px;
+}
+.qty-label-hint{font-size:.75rem;color:var(--text-dim)}
+.qty-control-right{display:flex;align-items:center;gap:12px}
+.qty-btn{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(30,120,220,.2);border:1px solid var(--glass-border);
+  color:var(--cyan);font-weight:900;font-size:1.1rem;cursor:pointer;
+  font-family:inherit;display:flex;align-items:center;justify-content:center;
+  transition:background .1s linear;
+}
+.qty-btn:hover{background:rgba(30,120,220,.35);border-color:var(--glass-border-hover)}
+.qty-btn:disabled{opacity:.3;cursor:not-allowed}
+.qty-value{font-size:1rem;font-weight:900;color:var(--text);min-width:30px;text-align:center}
+
+/* ========== STOCK PRICE ROW ========== */
+.stock-price-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 14px;margin-top:12px;background:rgba(30,120,220,.06);
+  border-radius:10px;font-size:.8rem;
+}
+.stock-info-label{color:var(--text-dim);font-weight:700}
+.stock-info-price{
+  font-weight:900;font-size:1.05rem;
+  background:linear-gradient(135deg,var(--cyan),var(--aqua));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ========== ORDER SUMMARY ========== */
+.order-summary-box{
+  padding:14px;margin-bottom:14px;background:rgba(30,120,220,.08);
+  border:1px solid rgba(160,232,255,.2);border-radius:12px;
+}
+.summary-row{
+  display:flex;justify-content:space-between;
+  font-size:.82rem;color:var(--text-dim);padding:4px 0;
+}
+.summary-row.total{
+  font-weight:900;font-size:1rem;color:var(--text);
+  border-top:1px solid rgba(100,180,255,.15);
+  padding-top:10px;margin-top:6px;
+}
+.summary-row .gold{
+  background:linear-gradient(135deg,var(--cyan),var(--aqua));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.summary-discount-value{color:var(--green)}
+
+/* ========== BUTTONS ========== */
+.btn-primary-modal{
+  width:100%;padding:14px;margin-top:12px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#001a2e;font-weight:900;font-size:.9rem;border:none;
+  border-radius:12px;cursor:pointer;font-family:inherit;
+}
+.btn-primary-modal:disabled{opacity:.4;cursor:not-allowed}
+.btn-back-modal{
+  width:100%;padding:12px;margin-top:8px;
+  background:rgba(30,120,220,.1);border:1px solid var(--glass-border);
+  color:var(--text-dim);font-weight:800;font-size:.85rem;
+  border-radius:12px;cursor:pointer;font-family:inherit;
+  transition:background .1s linear,border-color .1s linear;
+}
+.btn-back-modal:hover{border-color:var(--glass-border-hover);color:var(--text)}
+.voucher-input-row{display:flex;gap:8px}
+.form-input-uppercase{text-transform:uppercase;flex:1}
+.btn-voucher-apply{
+  padding:0 16px;background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#001a2e;border:none;border-radius:12px;
+  font-weight:900;font-size:.8rem;cursor:pointer;font-family:inherit;
+}
+.voucher-feedback{font-size:.75rem;margin-top:6px;min-height:1em}
+.voucher-feedback.error{color:var(--red)}
+.voucher-feedback.success{color:var(--green)}
+
+/* ========== WHY US SECTION ========== */
+.why-section{padding:30px 0}
+.why-grid{display:grid;gap:10px}
+.why-card{
+  background:rgba(30,120,220,.08);border:1px solid rgba(160,232,255,.2);
+  border-radius:14px;padding:18px;display:flex;align-items:center;
+  gap:14px;position:relative;overflow:hidden;
+  transition:border-color .15s linear;
+}
+.why-card:hover{border-color:var(--glass-border-hover)}
+.why-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(77,208,255,.2),rgba(46,143,255,.15));
+  border:1px solid rgba(120,200,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:var(--cyan);
+}
+.why-icon svg{
+  width:22px;height:22px;
+  stroke:currentColor;fill:none;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+}
+.why-content h3{font-size:.9rem;font-weight:800;margin-bottom:2px}
+.why-content p{font-size:.75rem;color:var(--text-dim);line-height:1.4}
+
+/* ========== PROMO BANNER ========== */
+.promo-banner{
+  margin:20px 0;padding:28px 24px;border-radius:20px;
+  background:rgba(10,40,90,.3);border:1px solid rgba(160,232,255,.3);
+  text-align:center;
+}
+.promo-banner h3{
+  font-size:1.2rem;font-weight:900;margin-bottom:6px;
+  background:linear-gradient(135deg,#fff,var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.promo-banner p{font-size:.85rem;color:var(--text-dim);margin-bottom:16px}
+.promo-btn{
+  display:inline-block;padding:12px 28px;border-radius:100px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#001a2e;font-weight:800;font-size:.85rem;text-decoration:none;
+  border:none;cursor:pointer;font-family:inherit;
+}
+.promo-btn-full{width:100%}
+
+/* ========== FOOTER ========== */
+.footer{
+  padding:30px 0;border-top:1px solid rgba(100,180,255,.15);
+  text-align:center;font-size:.75rem;color:var(--text-dim-2);
+  background:#000;
+}
+.footer-brand{
+  font-weight:900;font-size:.9rem;letter-spacing:1px;margin-bottom:6px;
+  background:linear-gradient(135deg,var(--cyan),var(--aqua));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ========== FLOATING BUTTONS (SAMEAKAN UKURAN) ========== */
+.wa-float,
+.back-to-top{
+  position:fixed;right:20px;width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:99;border:none;
+}
+.wa-float{
+  bottom:20px;
+  background:linear-gradient(135deg,#25d366,#128c7e);
+  color:#fff;text-decoration:none;
+  box-shadow:0 6px 18px rgba(37,211,102,.45);
+  transition:transform .15s linear;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:22px;height:22px;fill:currentColor;display:block}
+.back-to-top{
+  bottom:80px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#001a2e;
+  box-shadow:0 6px 18px rgba(77,208,255,.45);
+  opacity:0;visibility:hidden;
+  transition:opacity .2s linear,visibility .2s linear,transform .2s linear;
+}
+.back-to-top svg{
+  width:22px;height:22px;
+  stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+  display:block;
+}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{transform:scale(1.05)}
+.scroll-progress{
+  position:fixed;top:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--blue),var(--aqua));
+  z-index:1000;width:0;
+}
+
+/* ========== MODAL ========== */
+.modal{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px;
+}
+.modal.active{display:flex}
+.modal-content{
+  background:rgba(20,50,100,.98);border:1px solid rgba(160,232,255,.35);
+  border-radius:24px;padding:24px;max-width:420px;width:100%;
+  position:relative;max-height:90vh;overflow-y:auto;
+}
+.modal-close{
+  position:absolute;top:12px;right:16px;background:none;border:none;
+  color:var(--text-dim);font-size:1.6rem;cursor:pointer;line-height:1;
+  transition:color .15s linear;
+}
+.modal-close:hover{color:var(--cyan)}
+.modal-content h3{font-size:1.2rem;font-weight:900;margin-bottom:8px;color:var(--text)}
+
+/* ========== FORM INPUT ========== */
+.form-input{
+  padding:12px 16px;border-radius:12px;background:rgba(0,20,50,.6);
+  border:1px solid var(--glass-border);color:var(--text);font-family:inherit;
+  font-size:.9rem;outline:none;width:100%;transition:border-color .15s linear;
+}
+.form-input:focus{border-color:var(--glass-border-hover)}
+.form-input::placeholder{color:var(--text-dim-2)}
+.form-group{margin-bottom:14px}
+.form-label{
+  display:block;font-size:.7rem;font-weight:800;color:var(--text-dim);
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
+}
+
+/* ========== SPINNER ========== */
+.spinner{
+  display:inline-block;width:16px;height:16px;
+  border:2px solid rgba(0,0,0,.2);border-top-color:currentColor;
+  border-radius:50%;animation:spin .8s linear infinite;
+  vertical-align:middle;margin-right:6px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ========== AUTH MODAL ========== */
+.auth-card{
+  width:100%;max-width:440px;background:rgba(20,50,100,.98);
+  border:1px solid rgba(160,232,255,.35);border-radius:24px;
+  padding:36px 28px 28px;position:relative;max-height:90vh;overflow-y:auto;
+}
+.auth-logo-wrap{display:flex;justify-content:center;margin-bottom:20px;padding:0 20px}
+.auth-brand-img{width:auto;height:80px;max-width:100%;object-fit:contain}
+.auth-brand{
+  text-align:center;font-size:1.4rem;font-weight:900;letter-spacing:1px;
+  background:linear-gradient(135deg,#fff,var(--cyan-2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;margin-bottom:20px;
+}
+.auth-title{text-align:center;font-size:1.35rem;font-weight:800;color:var(--text);margin-bottom:8px}
+.auth-subtitle{text-align:center;font-size:.85rem;color:var(--text-dim);margin-bottom:28px}
+.auth-form{display:flex;flex-direction:column;gap:6px}
+.auth-label{
+  display:flex;align-items:center;gap:6px;
+  font-size:.7rem;font-weight:800;letter-spacing:1.2px;
+  text-transform:uppercase;color:var(--text);
+  margin-top:14px;margin-bottom:8px;
+}
+.auth-label-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:14px;height:14px;color:var(--cyan);flex-shrink:0;
+  transform:translateY(-1px);
+}
+.auth-label-icon svg,.auth-input-icon svg{
+  width:100%;height:100%;display:block;stroke:currentColor;fill:none;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+}
+.auth-input-wrap{position:relative;display:flex;align-items:center}
+.auth-input-icon{
+  position:absolute;left:14px;width:16px;height:16px;
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--text-dim-2);pointer-events:none;transition:color .15s linear;
+}
+.auth-input-wrap:focus-within .auth-input-icon{color:var(--cyan)}
+.auth-input{
+  width:100%;padding:14px 42px;border-radius:12px;
+  background:rgba(0,20,50,.6);border:1px solid var(--glass-border);
+  color:var(--text);font-family:inherit;font-size:.92rem;
+  outline:none;transition:border-color .15s linear;
+}
+.auth-input:focus{border-color:var(--glass-border-hover)}
+.auth-input::placeholder{color:var(--text-dim-2)}
+.auth-pw-toggle{
+  position:absolute;right:10px;background:none;border:none;
+  color:var(--text-dim);cursor:pointer;padding:6px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  transition:color .15s linear;
+}
+.auth-pw-toggle:hover{color:var(--cyan)}
+.auth-pw-toggle svg{width:18px;height:18px;display:block}
+.auth-pw-toggle .icon-eye-off{display:none}
+.auth-pw-toggle.revealed .icon-eye{display:none}
+.auth-pw-toggle.revealed .icon-eye-off{display:block}
+.auth-forgot{
+  align-self:flex-end;color:var(--cyan);font-size:.8rem;font-weight:700;
+  text-decoration:none;margin-top:10px;transition:color .15s linear;
+}
+.auth-forgot:hover{color:var(--cyan-2);text-decoration:underline}
+.auth-submit{
+  width:100%;padding:16px;margin-top:20px;border-radius:100px;border:none;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#001a2e;font-family:inherit;font-weight:900;font-size:1rem;
+  letter-spacing:.5px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.auth-submit svg{
+  width:20px;height:20px;flex-shrink:0;stroke:currentColor;fill:none;
+  stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+}
+.auth-submit:disabled{opacity:.5;cursor:not-allowed}
+.auth-divider{
+  display:flex;align-items:center;gap:12px;margin:24px 0 16px;
+  color:var(--text-dim);font-size:.78rem;
+}
+.auth-divider::before,.auth-divider::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(120,200,255,.3),transparent);
+}
+.auth-google{
+  width:100%;padding:14px;border-radius:100px;
+  background:rgba(30,120,220,.1);border:1px solid var(--glass-border);
+  color:var(--text);font-family:inherit;font-weight:700;font-size:.92rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:background .1s linear,border-color .1s linear;
+}
+.auth-google:hover{background:rgba(30,120,220,.2);border-color:var(--glass-border-hover)}
+.auth-google svg{width:20px;height:20px;flex-shrink:0}
+.auth-footer{text-align:center;margin-top:22px;font-size:.82rem;color:var(--text-dim)}
+.auth-footer a{color:var(--cyan);font-weight:800;text-decoration:none;margin-left:4px}
+.auth-footer a:hover{color:var(--cyan-2);text-decoration:underline}
+.auth-error{
+  display:none;margin-top:12px;padding:10px 14px;
+  background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.4);
+  border-radius:8px;color:#ff8080;font-size:.8rem;line-height:1.4;
+}
+.auth-error.show{display:block}
+@media(max-width:420px){
+  .auth-card{padding:28px 20px 22px;border-radius:20px}
+  .auth-title{font-size:1.2rem}
+  .auth-brand{font-size:1.2rem}
+  .auth-brand-img{height:60px}
+}
+
+/* ========== PROFILE MODAL ========== */
+.profile-header{text-align:center;margin-bottom:20px}
+.profile-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 20px}
+.profile-stat{
+  padding:14px 12px;border-radius:12px;background:rgba(30,120,220,.08);
+  border:1px solid rgba(160,232,255,.2);text-align:center;
+}
+.profile-stat-value{
+  font-size:1.3rem;font-weight:900;
+  background:linear-gradient(135deg,var(--cyan),var(--aqua));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;line-height:1.1;
+}
+.profile-stat-label{
+  font-size:.6rem;font-weight:800;color:var(--text-dim);
+  letter-spacing:1px;text-transform:uppercase;margin-top:4px;
+}
+.profile-tabs{
+  display:flex;gap:6px;margin-bottom:14px;
+  background:rgba(30,120,220,.08);border-radius:12px;padding:4px;
+}
+.profile-tab{
+  flex:1;padding:10px;border-radius:8px;border:none;background:transparent;
+  color:var(--text-dim);font-family:inherit;font-weight:800;font-size:.75rem;
+  cursor:pointer;transition:background .1s linear,color .1s linear;
+}
+.profile-tab.active{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#001a2e}
+.profile-panel{display:none}
+.profile-panel.active{display:block}
+#userAvatar,#profileAvatar{
+  width:72px;height:72px;border-radius:50%;margin:0 auto 14px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.8rem;font-weight:900;color:#001a2e;overflow:hidden;
+}
+#userAvatar img,#profileAvatar img{width:100%;height:100%;object-fit:cover}
+#userName{text-align:center}
+#userEmail{text-align:center;color:var(--text-dim);font-size:.85rem;margin-bottom:20px}
+
+/* ========== ORDER HISTORY ========== */
+.order-list{
+  display:flex;flex-direction:column;gap:10px;max-height:400px;
+  overflow-y:auto;
+}
+.order-card{
+  padding:14px;border-radius:12px;background:rgba(20,50,100,.35);
+  border:1px solid rgba(160,232,255,.2);position:relative;
+  transition:border-color .15s linear;
+}
+.order-card:hover{border-color:var(--glass-border-hover)}
+.order-card-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:8px;margin-bottom:10px;
+}
+.order-id{font-size:.65rem;color:var(--text-dim-2);font-weight:700}
+.order-date{font-size:.65rem;color:var(--text-dim-2)}
+.order-product{font-size:.9rem;font-weight:900;color:var(--text);margin-bottom:4px;line-height:1.3}
+.order-variant{font-size:.75rem;color:var(--text-dim);margin-bottom:8px}
+.order-footer{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:10px;border-top:1px solid rgba(100,180,255,.12);
+}
+.order-price{
+  font-size:1rem;font-weight:900;
+  background:linear-gradient(135deg,var(--cyan),var(--aqua));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.order-status{
+  padding:3px 8px;border-radius:6px;font-size:.6rem;font-weight:800;
+  letter-spacing:.5px;text-transform:uppercase;
+}
+.order-status.pending{background:rgba(255,200,71,.15);color:var(--gold);border:1px solid rgba(255,200,71,.4)}
+.order-status.paid{background:rgba(34,197,94,.15);color:var(--green);border:1px solid rgba(34,197,94,.4)}
+.order-status.cancelled{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.4)}
+.order-reorder-btn{
+  margin-top:10px;width:100%;padding:10px;background:rgba(30,120,220,.1);
+  border:1px solid var(--glass-border);color:var(--cyan);
+  font-family:inherit;font-weight:800;font-size:.75rem;border-radius:8px;
+  cursor:pointer;transition:background .1s linear,border-color .1s linear;
+}
+.order-reorder-btn:hover{border-color:var(--glass-border-hover);background:rgba(30,120,220,.2)}
+.empty-state{text-align:center;padding:40px 20px;color:var(--text-dim-2)}
+.empty-state-icon{font-size:3rem;margin-bottom:10px;opacity:.5}
+.empty-state-text{font-size:.85rem;line-height:1.5}
+
+/* ========== TOAST ========== */
+#toastContainer{
+  position:fixed;top:80px;left:50%;transform:translateX(-50%);
+  z-index:99999;display:flex;flex-direction:column;gap:8px;
+  pointer-events:none;width:calc(100% - 32px);max-width:400px;
+}
+.toast{
+  padding:12px 16px;border-radius:12px;background:rgba(20,50,100,.98);
+  border:1px solid rgba(160,232,255,.35);
+  box-shadow:0 12px 40px rgba(0,0,0,.5);color:var(--text);
+  font-size:.85rem;font-weight:700;display:flex;align-items:center;gap:10px;
+  pointer-events:auto;
+}
+.toast.success{border-color:rgba(34,197,94,.5)}
+.toast.error{border-color:rgba(239,68,68,.5)}
+.toast.info{border-color:rgba(77,208,255,.5)}
+.toast-icon{font-size:1.1rem;flex-shrink:0}
+.toast-msg{flex:1;line-height:1.4}
+
+/* ========== WELCOME SPLASH ========== */
+#welcomeSplash{
+  position:fixed;inset:0;z-index:9999;background:#000;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .4s ease,visibility .4s ease;
+}
+#welcomeSplash.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.welcome-content{
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+}
+.welcome-rs{
+  width:130px;height:auto;max-width:60vw;object-fit:contain;
+  animation:welcomeFadeIn .6s ease-out both;
+}
+.welcome-text-img{
+  width:240px;height:auto;max-width:75vw;object-fit:contain;
+  animation:welcomeFadeIn .6s ease-out .2s both;
+}
+@keyframes welcomeFadeIn{
+  from{opacity:0;transform:scale(.9)}
+  to{opacity:1;transform:scale(1)}
+}
+@media(max-width:640px){.welcome-rs{width:100px}.welcome-text-img{width:190px}}
+@media(max-width:380px){.welcome-rs{width:85px}.welcome-text-img{width:160px}}
+
+/* ========== SCROLL STATE ========== */
+body.scrolling .svg-star-wrap::after,
+body.scrolling .verify-wrap::after{animation-play-state:paused}
+
+/* ========== REDUCED MOTION ========== */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#FFE87C"/>
+<stop offset="30%" stop-color="#FFC847"/>
+<stop offset="50%" stop-color="#FFD700"/>
+<stop offset="70%" stop-color="#FFB300"/>
+<stop offset="100%" stop-color="#FF9500"/>
+</linearGradient>
+</defs>
+</svg>
+
+<div id="welcomeSplash">
+  <div class="welcome-content">
+    <img src="welcome-rs.webp" alt="RS" class="welcome-rs" fetchpriority="high" decoding="async" onerror="this.style.display='none'">
+    <img src="welcome-text.webp" alt="REYY STORE" class="welcome-text-img" fetchpriority="high" decoding="async" onerror="this.style.display='none'">
+  </div>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <img src="logo.webp" alt="REYY STORE" class="logo-img" fetchpriority="high" decoding="async" onerror="this.outerHTML='<div class=&quot;logo-img&quot;>⚡</div>'">
+      <img src="logo-text.webp" alt="REYY STORE" class="logo-text-img" fetchpriority="high" decoding="async" onerror="this.outerHTML='<span style=&quot;font-weight:900;font-size:1.1rem;letter-spacing:1px&quot;>REYY STORE</span>'">
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn user" id="userBtn" aria-label="Login">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="banner-section">
+  <div class="container">
+    <div class="banner">
+      <img src="banner.webp" alt="Banner" class="banner-img" fetchpriority="high" decoding="async" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<div class="container" id="produk">
+  <div class="section-head"><h2>𝗟𝗜𝗦𝗧 𝗣𝗥𝗢𝗗𝗨𝗖𝗧𝗦</h2></div>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" class="search-input" placeholder="search produk...">
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="drip">Drip</button>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+</div>
+
+<section class="testi-section">
+  <div class="container">
+    <div class="section-head"><h2>CUSTOMER REVIEW</h2></div>
+    <div class="testi-box">
+      <div class="testi-header">
+        <div class="testi-header-icon">💬</div>
+        <div class="testi-header-content">
+          <div class="testi-header-title">REVIEW</div>
+          <div class="testi-header-rating-row">
+            <span class="testi-header-stars" id="testiHeaderStars"></span>
+            <span class="testi-header-score">4.9/5.0 RATING</span>
+          </div>
+        </div>
+        <div class="testi-header-total">
+          <div class="testi-header-count">10</div>
+          <div class="testi-header-label">ALL REVIEW</div>
+        </div>
+      </div>
+      <div class="review-scroll-viewport" id="reviewViewport">
+        <div class="review-scroll" id="reviewTrack"></div>
+      </div>
+      <button type="button" class="show-all-reviews-btn" id="showAllReviewsBtn">sʜᴏᴡ ᴀʟʟ ʀᴇᴠɪᴇᴡ >>></button>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <div class="section-head"><h2>Why Choose REYY?</h2></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="why-content"><h3>Instant Delivery</h3><p>Get your keys delivered automatically within seconds after payment.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <div class="why-content"><h3>24/7 Support</h3><p>Our team is always available to help you with any questions.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="why-content"><h3>100% Secure</h3><p>Safe & encrypted payments with verified delivery system.</p></div>
+      </div>
+    </div>
+    <div class="promo-banner">
+      <h3>🔥 PROMO REYY STORE</h3>
+      <p>Diskon spesial untuk pembelian pertama. Buruan sebelum habis!</p>
+      <button class="promo-btn" id="promoBtn">Order Sekarang →</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">⚡ REYY STORE OFFICIAL</div>
+    <p>&copy; 2026 REYY STORE — Premium Digital Key Store. Seluruh Hak Dilindungi.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/6285647974200" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+</button>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div id="toastContainer"></div>
+
+<div class="modal" id="buyModal">
+  <div class="modal-content">
+    <button class="modal-close" id="buyModalClose">×</button>
+    <h3 id="buyModalTitle">Produk</h3>
+    <div class="step-indicator">
+      <div class="step-item"><div class="step-dot active" id="stepDot1">1</div><div class="step-label">Varian</div></div>
+      <div class="step-line"></div>
+      <div class="step-item"><div class="step-dot" id="stepDot2">2</div><div class="step-label">Data</div></div>
+      <div class="step-line"></div>
+      <div class="step-item"><div class="step-dot" id="stepDot3">3</div><div class="step-label">Bayar</div></div>
+    </div>
+    <div class="step-panel active" id="stepPanel1">
+      <div class="form-group">
+        <label class="form-label">Pilih Varian</label>
+        <div class="duration-card-list" id="durationCardList"></div>
+      </div>
+      <div class="qty-group" id="qtyGroup">
+        <label class="form-label">Jumlah</label>
+        <div class="qty-control">
+          <span class="qty-label-hint">Berapa banyak?</span>
+          <div class="qty-control-right">
+            <button type="button" class="qty-btn" id="qtyMinus">−</button>
+            <span class="qty-value" id="qtyValue">1</span>
+            <button type="button" class="qty-btn" id="qtyPlus">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="stock-price-row is-hidden" id="stockPriceRow">
+        <span class="stock-info-label" id="stockInfoLabel">Stok: 0</span>
+        <span class="stock-info-price" id="stockInfoPrice">Rp 0</span>
+      </div>
+      <button type="button" class="btn-primary-modal" id="step1Continue" disabled>Lanjut →</button>
+    </div>
+    <div class="step-panel" id="stepPanel2">
+      <div class="order-summary-box">
+        <div class="summary-row"><span id="summaryProduct">-</span><span id="summaryQty">x1</span></div>
+        <div class="summary-row is-hidden" id="summaryDiscountRow"><span id="summaryDiscountLabel">Voucher</span><span class="summary-discount-value" id="summaryDiscount">- Rp 0</span></div>
+        <div class="summary-row total"><span>Total</span><span class="gold" id="summaryTotal">Rp 0</span></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Kode Voucher (opsional)</label>
+        <div class="voucher-input-row">
+          <input type="text" class="form-input form-input-uppercase" id="voucherInput" placeholder="Contoh: REYY10">
+          <button type="button" class="btn-voucher-apply" id="applyVoucherBtn">Pakai</button>
+        </div>
+        <p class="voucher-feedback" id="voucherFeedback"></p>
+      </div>
+      <div class="form-group"><label class="form-label">Nama Kamu</label><input type="text" class="form-input" id="buyName" placeholder="Nama lengkap" required></div>
+      <div class="form-group"><label class="form-label">No. WA / Telegram</label><input type="text" class="form-input" id="buyContact" placeholder="08123456789" required></div>
+      <div class="form-group"><label class="form-label">Channel</label><select class="form-input" id="buyChannel"><option value="wa">WhatsApp</option><option value="telegram">Telegram</option></select></div>
+      <button type="button" class="btn-primary-modal" id="step2Checkout">Bayar Sekarang →</button>
+      <button type="button" class="btn-back-modal" id="step2Back">← Kembali</button>
+    </div>
+    <div class="step-panel" id="stepPanel3">
+      <div class="loading-state"><div class="spinner"></div><p>Menyiapkan pesanan...</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="reviewsModal">
+  <div class="modal-content">
+    <button class="modal-close" id="reviewsModalClose">×</button>
+    <h3>Semua Ulasan</h3>
+    <div class="breakdown-summary">
+      <div class="breakdown-avg">5.0<span class="star-icon" id="breakdownAvgStar"></span></div>
+      <div class="breakdown-label">Excellent</div>
+      <div class="breakdown-count" id="breakdownTotal">10 reviews</div>
+      <div class="breakdown-row"><span class="breakdown-star-label">5<span class="svg-star-slot"></span></span><div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar5"></div></div><span class="breakdown-num" id="num5">0</span></div>
+      <div class="breakdown-row"><span class="breakdown-star-label">4<span class="svg-star-slot"></span></span><div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar4"></div></div><span class="breakdown-num" id="num4">0</span></div>
+      <div class="breakdown-row"><span class="breakdown-star-label">3<span class="svg-star-slot"></span></span><div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar3"></div></div><span class="breakdown-num" id="num3">0</span></div>
+      <div class="breakdown-row"><span class="breakdown-star-label">2<span class="svg-star-slot"></span></span><div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar2"></div></div><span class="breakdown-num" id="num2">0</span></div>
+      <div class="breakdown-row"><span class="breakdown-star-label">1<span class="svg-star-slot"></span></span><div class="breakdown-bar-track"><div class="breakdown-bar-fill" id="bar1"></div></div><span class="breakdown-num" id="num1">0</span></div>
+    </div>
+    <div class="breakdown-list" id="breakdownList"></div>
+  </div>
+</div>
+
+<div class="modal" id="authModal">
+  <div class="auth-card">
+    <button class="modal-close" id="authClose">×</button>
+    <div id="authLoggedOut">
+      <div class="auth-logo-wrap">
+        <img src="logo-text.webp" alt="REYY STORE" class="auth-brand-img" onerror="this.outerHTML='<h1 class=&quot;auth-brand&quot;>REYY STORE</h1>'">
+      </div>
+      <h2 class="auth-title" id="authTitle">LOGIN KE AKUN</h2>
+      <p class="auth-subtitle" id="authSub">untuk melihat riwayat pembelian key kamu</p>
+      <form class="auth-form" id="authForm">
+        <input type="text" id="authName" placeholder="Nama kamu" class="is-hidden">
+        <label class="auth-label" for="authEmail">
+          <span class="auth-label-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></span> EMAIL
+        </label>
+        <div class="auth-input-wrap">
+          <span class="auth-input-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></span>
+          <input type="email" id="authEmail" class="auth-input" placeholder="email@example.com" required autocomplete="email">
+        </div>
+        <label class="auth-label" for="authPassword">
+          <span class="auth-label-icon"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span> PASSWORD
+        </label>
+        <div class="auth-input-wrap">
+          <span class="auth-input-icon"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <input type="password" id="authPassword" class="auth-input" placeholder="Masukkan password" required minlength="6" autocomplete="current-password">
+          <button type="button" class="auth-pw-toggle" id="pwToggle" aria-label="Toggle password">
+            <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <a href="#" class="auth-forgot" id="forgotLink">Lupa Password?</a>
+        <button type="submit" class="auth-submit" id="authSubmit">
+          <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Masuk
+        </button>
+      </form>
+      <div class="auth-divider">atau login dengan</div>
+      <button type="button" class="auth-google" id="googleBtn">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+        Login dengan Google
+      </button>
+      <p class="auth-footer">Belum punya akun?<a href="#" id="authToggle">Daftar</a></p>
+      <div class="auth-error" id="authError"></div>
+    </div>
+    <div id="authLoggedIn" class="is-hidden">
+      <div id="userAvatar">?</div>
+      <h3 id="userName">User</h3>
+      <p id="userEmail">email@mail.com</p>
+      <button class="promo-btn promo-btn-full" id="logoutBtn">Logout</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="profileModal">
+  <div class="modal-content">
+    <button class="modal-close" id="profileClose">×</button>
+    <div class="profile-header">
+      <div id="profileAvatar">?</div>
+      <h3 id="profileName">User</h3>
+      <p id="profileEmail">email@mail.com</p>
+    </div>
+    <div class="profile-stats">
+      <div class="profile-stat"><div class="profile-stat-value" id="statOrders">0</div><div class="profile-stat-label">Total Order</div></div>
+      <div class="profile-stat"><div class="profile-stat-value" id="statSpending">Rp 0</div><div class="profile-stat-label">Total Belanja</div></div>
+    </div>
+    <div class="profile-tabs">
+      <button class="profile-tab active" data-tab="orders">📦 Riwayat Order</button>
+      <button class="profile-tab" data-tab="settings">⚙️ Pengaturan</button>
+    </div>
+    <div class="profile-panel active" id="panelOrders"><div class="order-list" id="orderList"></div></div>
+    <div class="profile-panel" id="panelSettings">
+      <button class="promo-btn promo-btn-full" id="profileLogoutBtn">Logout</button>
+      <button class="btn-back-modal" id="profileClearHistoryBtn">🗑️ Hapus Riwayat Order</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const firebaseConfig={
+  apiKey:"AIzaSyCi5LoVQ2wN_Dv01B2oLRA4th66R-ZrDSo",
+  authDomain:"reyy-store-2a1e0.firebaseapp.com",
+  projectId:"reyy-store-2a1e0",
+  storageBucket:"reyy-store-2a1e0.firebasestorage.app",
+  messagingSenderId:"326357539263",
+  appId:"1:326357539263:web:e95c08ed5c760601cde90a"
+};
+
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+
+window.dispatchEvent(new CustomEvent("firebase-ready",{
+  detail:{auth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,GoogleAuthProvider,signInWithPopup,updateProfile}
+}));
+</script>
+
+<script>
+const WA_NUMBER="6285647974200";
+const TG_USER="official_reyystore";
+const ORDERS_KEY="reyy-orders";
+const VOUCHERS={
+  "REYY10":{type:"percent",value:10,minPurchase:0},
+  "REYY20":{type:"percent",value:20,minPurchase:50000},
+  "NEWBIE":{type:"fixed",value:5000,minPurchase:0}
+};
+
+const SVG_STAR_FULL=`<span class="svg-star-wrap"><svg class="svg-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>`;
+const VERIFY_SVG_BODY=`<circle cx="12" cy="12" r="11" fill="#1DA1F2"/><path d="M6.8 12.3L10.2 15.7L17.2 8.7" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`;
+const VERIFY_CHECK_HTML=`<span class="verify-wrap"><svg class="verify-check" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${VERIFY_SVG_BODY}</svg></span>`;
+const VERIFY_CHECK_SVG_INLINE=`<svg width="13" height="13" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-left:4px;transform:translateY(-1px);flex-shrink:0">${VERIFY_SVG_BODY}</svg>`;
+const SVG_THUMB=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/></svg>`;
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderStars(r){return SVG_STAR_FULL.repeat(Math.floor(r))+SVG_STAR_FULL.repeat(5-Math.floor(r))}
+function formatRupiah(n){return"Rp "+n.toLocaleString("id-ID")}
+function showToast(msg,type="info"){
+  const c=document.getElementById("toastContainer");
+  const i={success:"✅",error:"❌",info:"ℹ️"};
+  const t=document.createElement("div");
+  t.className=`toast ${type}`;
+  t.innerHTML=`<span class="toast-icon">${i[type]||"ℹ️"}</span><span class="toast-msg">${esc(msg)}</span>`;
+  c.appendChild(t);
+  setTimeout(()=>{t.style.transition="opacity .25s linear";t.style.opacity="0";setTimeout(()=>t.remove(),260)},2800);
+}
+function loadOrders(){try{return JSON.parse(localStorage.getItem(ORDERS_KEY)||"[]")}catch{return[]}}
+function saveOrder(o){const a=loadOrders();a.unshift(o);if(a.length>50)a.length=50;localStorage.setItem(ORDERS_KEY,JSON.stringify(a))}
+function clearOrders(){localStorage.removeItem(ORDERS_KEY)}
+function getOrderStats(){const a=loadOrders();return{count:a.length,total:a.reduce((s,o)=>s+(o.finalTotal||0),0)}}
+
+(function initWelcome(){
+  const splash=document.getElementById("welcomeSplash");
+  if(!splash)return;
+  if(sessionStorage.getItem("reyy-welcome-seen")){
+    splash.classList.add("hidden");
+    setTimeout(()=>splash.remove(),400);
+    return;
+  }
+  sessionStorage.setItem("reyy-welcome-seen","1");
+  setTimeout(()=>{splash.classList.add("hidden");setTimeout(()=>splash.remove(),400)},1600);
+})();
+
+(function(){
+  const p=document.getElementById("scrollProgress");
+  const b=document.getElementById("backToTop");
+  let lastY=0,showBtn=false,scrollTimer=null;
+  window.addEventListener("scroll",()=>{
+    const y=window.scrollY;
+    if(Math.abs(y-lastY)<5)return;
+    lastY=y;
+    if(p){
+      const d=document.documentElement.scrollHeight-window.innerHeight;
+      p.style.width=(d>0?(y/d*100):0)+"%";
+    }
+    if(b){
+      const s=y>500;
+      if(s!==showBtn){showBtn=s;b.classList.toggle("show",s)}
+    }
+    document.body.classList.add("scrolling");
+    clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(()=>document.body.classList.remove("scrolling"),150);
+  },{passive:true});
+  if(b)b.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+})();
+
+const PRODUCTS=[
+  {id:1,name:"Drip Apk Mood",cat:"drip",img:"drip-apkmood.webp",icon:"🎯",verified:true,best:true,rating:5,reviews:316,status:"online",
+    variants:[{name:"1 Hari",price:10000,stock:110},{name:"3 Hari",price:25000,stock:93},{name:"7 Hari",price:45000,stock:59},{name:"15 hari",price:70000,stock:34},{name:"30 Hari",price:100000,stock:20}]},
+  {id:2,name:"Drip Proxy",cat:"drip",img:"drip-proxy.webp",icon:"🌀",verified:true,best:true,rating:5,reviews:276,status:"online",
+    variants:[{name:"1 Hari",price:10000,stock:113},{name:"3 Hari",price:25000,stock:86},{name:"7 Hari",price:45000,stock:54},{name:"30 Hari",price:100000,stock:23}]},
+  {id:3,name:"Drip Wire",cat:"drip",img:"drip-wire.webp",icon:"⚡",verified:true,best:true,rating:5,reviews:335,status:"online",
+    variants:[{name:"6 jam",price:7000,stock:150},{name:"12 jam",price:11500,stock:85},{name:"1 Hari",price:18000,stock:67},{name:"7 Hari",price:45000,stock:33}]},
+  {id:4,name:"Drip Root",cat:"drip",img:"drip-root.webp",icon:"🔓",verified:true,best:true,rating:5,reviews:188,status:"online",
+    variants:[{name:"1 Hari",price:17000,stock:115},{name:"7 Hari",price:60000,stock:57},{name:"30 Hari",price:150000,stock:16}]}
+];
+
+const TESTIMONIALS=[
+  {name:"Andi Wijaya",initial:"A",time:"58m ago",text:"Udah 3 bulan pake aman terus, gokil pelayanannya.",likes:220,stars:5,verified:true,product:"Drip Apk Mood"},
+  {name:"Rizky Pratama",initial:"R",time:"2j ago",text:"Proses cepet banget, tinggal TF langsung dapet key. Recommended!",likes:185,stars:5,verified:true,product:"Drip Proxy"},
+  {name:"Dewi Lestari",initial:"D",time:"5j ago",text:"Auto delivery-nya keren, key langsung masuk WhatsApp. Gak pake lama.",likes:142,stars:5,verified:true,product:"Drip Wire"},
+  {name:"Bagas Wibowo",initial:"B",time:"1h ago",text:"Awalnya ragu, ternyata aman. Udah 2x order, lancar terus.",likes:98,stars:5,verified:true,product:"Drip Root"},
+  {name:"Nizz",initial:"N",time:"3h ago",text:"Mantap jiwa, work terus gak pernah kena banned. Top markotop!",likes:156,stars:5,verified:true,product:"Drip Apk Mood"},
+  {name:"Jhonn Rios",initial:"J",time:"6h ago",text:"Osm mod, garis panjang gak ketauan admin. Harga murah kualitas oke.",likes:87,stars:5,verified:true,product:"Drip Wire"},
+  {name:"Geloo",initial:"G",time:"2h ago",text:"Geloo gua TF langsung keluar jirrr mantep banget. Repeat order!",likes:342,stars:5,verified:true,product:"Drip Proxy"},
+  {name:"Senu Saputra",initial:"S",time:"1h ago",text:"Proses cepat, esign langsung kepasang di iPhone aku. Gak ada kendala.",likes:76,stars:5,verified:true,product:"Drip Root"},
+  {name:"Rian Kusuma",initial:"R",time:"4h ago",text:"Murah, cepat, aman. Gua udah repeat order 5x, selalu puas.",likes:128,stars:5,verified:true,product:"Drip Apk Mood"},
+  {name:"Andi Indra",initial:"A",time:"8h ago",text:"Muy bueno, key langsung masuk setelah bayar. Pelayanan ramah.",likes:54,stars:5,verified:true,product:"Drip Wire"}
+];
+
+let currentFilter="all",currentSearch="";
+let currentProduct=null,currentVariant=null,currentQty=1;
+let currentUser=null,appliedVoucher=null;
+
+function renderProducts(){
+  const grid=document.getElementById("productGrid"),q=currentSearch.trim().toLowerCase();
+  const list=PRODUCTS.filter(p=>(currentFilter==="all"||p.cat===currentFilter)&&p.name.toLowerCase().includes(q));
+  if(!list.length){
+    grid.innerHTML='<p style="grid-column:1/-1;text-align:center;color:#8ab0d0;padding:40px">Produk tidak ditemukan.</p>';
+    return;
+  }
+  grid.innerHTML=list.map(p=>{
+    const thumb=p.img
+      ?`<img src="${esc(p.img)}" alt="${esc(p.name)}" class="product-thumb-img" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none';this.nextElementSibling.classList.remove('is-hidden')"><div class="product-thumb-fallback is-hidden">${p.icon}</div>`
+      :`<div class="product-thumb-fallback">${p.icon}</div>`;
+    const min=Math.min(...p.variants.map(v=>v.price));
+    return`<div class="product-card" data-id="${p.id}">
+      <div class="product-thumb">
+        ${thumb}
+        ${p.best?'<div class="badge-row"><span class="mini-badge best">best seller</span></div>':""}
+      </div>
+      <div class="product-info">
+        <div class="product-name-row">
+          <span class="product-name">${esc(p.name)}</span>
+          ${p.verified?VERIFY_CHECK_HTML:""}
+        </div>
+        <div class="product-rating-row">
+          <span>${renderStars(p.rating)}</span>
+          <span class="rating-text">${p.rating.toFixed(1)} (${p.reviews})</span>
+        </div>
+        <div class="product-status-row">
+          <span class="status-dot ${p.status==='offline'?'offline':''}"></span>
+          <span class="status-text ${p.status==='offline'?'offline':''}">${p.status==='online'?'Online':'Offline'}</span>
+        </div>
+        <div class="product-price-row">
+          <span class="price-label">𝕊𝕋𝔸ℝ𝕋 𝔽ℝ𝕆𝕄</span>
+          <span class="price-value">${formatRupiah(min)}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+  grid.querySelectorAll(".product-card").forEach(c=>{
+    c.addEventListener("click",()=>{
+      const p=PRODUCTS.find(x=>x.id===parseInt(c.dataset.id,10));
+      if(p)openBuyModal(p);
+    });
+  });
+  requestAnimationFrame(()=>{
+    document.querySelectorAll(".product-thumb-img").forEach(img=>{
+      img.style.opacity="0";
+      const done=()=>{img.style.opacity="1"};
+      if(img.complete)done();
+      else img.addEventListener("load",done,{once:true});
+    });
+  });
+}
+
+(function(){
+  const track=document.getElementById("reviewTrack");
+  if(!track)return;
+  const renderCards=()=>TESTIMONIALS.map(t=>`
+    <div class="review-card">
+      <div class="review-card-top">
+        <span class="review-card-rating">${SVG_STAR_FULL} ${t.stars.toFixed(1)}</span>
+        <span class="review-card-time">${esc(t.time)}</span>
+      </div>
+      <div class="review-card-product">🏷️ ${esc(t.product)}</div>
+      <p class="review-card-text">"${esc(t.text)}"</p>
+      <div class="review-card-bottom">
+        <div class="review-author">
+          <div class="review-avatar">${esc(t.initial)}</div>
+          <div class="review-author-name">${esc(t.name)}${t.verified?VERIFY_CHECK_SVG_INLINE:""}</div>
+        </div>
+        <span class="review-likes">${SVG_THUMB}${t.likes}</span>
+      </div>
+    </div>
+  `).join("");
+  track.innerHTML=renderCards()+renderCards();
+  const vp=document.getElementById("reviewViewport");
+  let w=0,o=0,drag=0,pause=0,sx=0,so=0,lt=null,rt=null;
+  const speed=25;
+  const recalc=()=>{w=track.scrollWidth/2};
+  const tick=ts=>{
+    if(lt===null)lt=ts;
+    const dt=(ts-lt)/1000;
+    lt=ts;
+    const clampedDt=Math.min(dt,0.05);
+    if(!pause&&!drag&&w>0){
+      o-=speed*clampedDt;
+      if(o<=-w)o+=w;
+      track.style.transform=`translate3d(${o}px,0,0)`;
+    }
+    requestAnimationFrame(tick);
+  };
+  vp.addEventListener("mouseenter",()=>{if(!drag){pause=1;if(rt)clearTimeout(rt)}});
+  vp.addEventListener("mouseleave",()=>{if(!drag){rt=setTimeout(()=>pause=0,300)}});
+  const down=x=>{drag=1;pause=1;if(rt)clearTimeout(rt);sx=x;so=o};
+  const move=x=>{if(!drag)return;o=so+(x-sx);if(w>0){while(o>0)o-=w;while(o<=-w)o+=w}track.style.transform=`translate3d(${o}px,0,0)`};
+  const up=()=>{if(!drag)return;drag=0;rt=setTimeout(()=>pause=0,1000)};
+  track.addEventListener("mousedown",e=>{down(e.clientX);e.preventDefault()});
+  window.addEventListener("mousemove",e=>move(e.clientX));
+  window.addEventListener("mouseup",up);
+  track.addEventListener("touchstart",e=>down(e.touches[0].clientX),{passive:true});
+  track.addEventListener("touchmove",e=>move(e.touches[0].clientX),{passive:true});
+  track.addEventListener("touchend",up);
+  window.addEventListener("resize",recalc);
+  recalc();requestAnimationFrame(tick);
+})();
+
+function renderBreakdown(){
+  const counts={5:0,4:0,3:0,2:0,1:0};
+  let total=0;
+  TESTIMONIALS.forEach(t=>{const s=Math.round(t.stars);if(counts[s]!==undefined)counts[s]++;total++});
+  document.getElementById("breakdownTotal").textContent=total+" reviews";
+  [5,4,3,2,1].forEach(n=>{
+    const c=counts[n]||0;
+    document.getElementById("bar"+n).style.width=(total>0?c/total*100:0)+"%";
+    document.getElementById("num"+n).textContent=c;
+  });
+  document.getElementById("breakdownList").innerHTML=TESTIMONIALS.map(t=>`
+    <div class="breakdown-item">
+      <div class="breakdown-item-top">
+        <div class="breakdown-item-author">
+          <div class="review-avatar">${esc(t.initial)}</div>
+          <div>
+            <div class="review-author-name">${esc(t.name)}${t.verified?VERIFY_CHECK_SVG_INLINE:""}</div>
+            <div class="breakdown-item-meta">Verified Buyer • ${esc(t.time)}</div>
+          </div>
+        </div>
+        <span class="breakdown-item-badge">${t.stars.toFixed(1)} ${SVG_STAR_FULL}</span>
+      </div>
+      <p class="review-card-text review-card-text-last">"${esc(t.text)}"</p>
+    </div>
+  `).join("");
+}
+
+function injectStaticSvgStars(){
+  const h=document.getElementById("testiHeaderStars");
+  if(h)h.innerHTML=SVG_STAR_FULL.repeat(5);
+  const a=document.getElementById("breakdownAvgStar");
+  if(a)a.innerHTML=SVG_STAR_FULL;
+  document.querySelectorAll(".svg-star-slot").forEach(e=>e.innerHTML=SVG_STAR_FULL);
+}
+
+const buyModal=document.getElementById("buyModal");
+const buyModalTitle=document.getElementById("buyModalTitle");
+const durationCardList=document.getElementById("durationCardList");
+const qtyGroup=document.getElementById("qtyGroup");
+const qtyValue=document.getElementById("qtyValue");
+const stockPriceRow=document.getElementById("stockPriceRow");
+const stockInfoLabel=document.getElementById("stockInfoLabel");
+const stockInfoPrice=document.getElementById("stockInfoPrice");
+const step1Continue=document.getElementById("step1Continue");
+
+function openBuyModal(p){
+  currentProduct=p;currentVariant=null;currentQty=1;appliedVoucher=null;
+  buyModalTitle.textContent=p.name;
+  durationCardList.innerHTML=p.variants.map((v,i)=>`
+    <div class="duration-card${v.stock<=0?' disabled':''}" data-vidx="${i}">
+      <div class="duration-card-icon">⏱</div>
+      <div class="duration-card-info">
+        <div class="duration-card-label">${esc(v.name)}</div>
+        <div class="duration-card-sub">Masa aktif ${esc(v.name.toLowerCase())}</div>
+      </div>
+      <div class="duration-card-stock${v.stock<=0?' out':''}">${v.stock<=0?'Habis':'Stok: '+v.stock}</div>
+      <div class="duration-card-price">${formatRupiah(v.price)}</div>
+      <div class="duration-card-chevron">›</div>
+    </div>
+  `).join("");
+  durationCardList.querySelectorAll(".duration-card").forEach(c=>{
+    if(c.classList.contains("disabled"))return;
+    c.addEventListener("click",()=>selectVariant(parseInt(c.dataset.vidx,10)));
+  });
+  qtyGroup.classList.remove("show");
+  stockPriceRow.classList.add("is-hidden");
+  step1Continue.disabled=true;
+  document.getElementById("voucherInput").value="";
+  const vf=document.getElementById("voucherFeedback");
+  vf.textContent="";vf.className="voucher-feedback";
+  document.getElementById("buyName").value=currentUser?.displayName||"";
+  document.getElementById("buyContact").value=currentUser?.email||"";
+  goToStep(1);
+  buyModal.classList.add("active");
+}
+
+function selectVariant(i){
+  currentVariant=currentProduct.variants[i];currentQty=1;
+  durationCardList.querySelectorAll(".duration-card").forEach(c=>c.classList.remove("selected"));
+  durationCardList.querySelector(`[data-vidx="${i}"]`).classList.add("selected");
+  qtyGroup.classList.add("show");
+  stockPriceRow.classList.remove("is-hidden");
+  step1Continue.disabled=false;
+  updateStockPrice();
+}
+
+function updateStockPrice(){
+  if(!currentVariant)return;
+  qtyValue.textContent=currentQty;
+  stockInfoLabel.textContent="Stok: "+currentVariant.stock;
+  stockInfoPrice.textContent=formatRupiah(currentVariant.price*currentQty);
+}
+
+function goToStep(n){
+  [1,2,3].forEach(i=>{
+    document.getElementById("stepPanel"+i).classList.toggle("active",i===n);
+    const d=document.getElementById("stepDot"+i);
+    d.classList.remove("active","done");
+    if(i<n)d.classList.add("done");
+    if(i===n)d.classList.add("active");
+  });
+}
+
+document.getElementById("qtyMinus").addEventListener("click",()=>{if(currentQty>1){currentQty--;updateStockPrice();resetVoucher()}});
+document.getElementById("qtyPlus").addEventListener("click",()=>{if(currentVariant&&currentQty<currentVariant.stock){currentQty++;updateStockPrice();resetVoucher()}});
+
+step1Continue.addEventListener("click",()=>{
+  if(!currentVariant)return;
+  document.getElementById("summaryProduct").textContent=currentProduct.name+" — "+currentVariant.name;
+  document.getElementById("summaryQty").textContent="x"+currentQty;
+  updateSummaryTotals();
+  goToStep(2);
+});
+document.getElementById("step2Back").addEventListener("click",()=>goToStep(1));
+
+function updateSummaryTotals(){
+  if(!currentVariant)return;
+  const sub=currentVariant.price*currentQty;
+  const disc=appliedVoucher?appliedVoucher.discountAmount:0;
+  const tot=Math.max(0,sub-disc);
+  const dr=document.getElementById("summaryDiscountRow");
+  if(appliedVoucher){
+    dr.classList.remove("is-hidden");
+    document.getElementById("summaryDiscountLabel").textContent="Voucher "+appliedVoucher.code;
+    document.getElementById("summaryDiscount").textContent="- "+formatRupiah(disc);
+  }else dr.classList.add("is-hidden");
+  document.getElementById("summaryTotal").textContent=formatRupiah(tot);
+}
+
+function resetVoucher(){
+  appliedVoucher=null;
+  const f=document.getElementById("voucherFeedback");
+  f.textContent="";f.className="voucher-feedback";
+  updateSummaryTotals();
+}
+
+document.getElementById("applyVoucherBtn").addEventListener("click",()=>{
+  const code=document.getElementById("voucherInput").value.trim().toUpperCase();
+  const fb=document.getElementById("voucherFeedback");
+  if(!code){fb.className="voucher-feedback error";fb.textContent="Masukkan kode voucher dulu";return}
+  const v=VOUCHERS[code];
+  if(!v){fb.className="voucher-feedback error";fb.textContent="Kode voucher tidak valid";appliedVoucher=null;updateSummaryTotals();return}
+  const sub=currentVariant.price*currentQty;
+  if(sub<v.minPurchase){fb.className="voucher-feedback error";fb.textContent="Minimal belanja "+formatRupiah(v.minPurchase);appliedVoucher=null;updateSummaryTotals();return}
+  let disc=v.type==="percent"?Math.round(sub*(v.value/100)):v.value;
+  disc=Math.min(disc,sub);
+  appliedVoucher={code,discountAmount:disc};
+  fb.className="voucher-feedback success";
+  fb.textContent=`Voucher "${code}" berhasil! Hemat ${formatRupiah(disc)}`;
+  updateSummaryTotals();
+});
+
+document.getElementById("step2Checkout").addEventListener("click",()=>{
+  const name=document.getElementById("buyName").value.trim();
+  const contact=document.getElementById("buyContact").value.trim();
+  const channel=document.getElementById("buyChannel").value;
+  if(!name||!contact){showToast("Nama dan contact wajib diisi!","error");return}
+  goToStep(3);
+  const disc=appliedVoucher?appliedVoucher.discountAmount:0;
+  const sub=currentVariant.price*currentQty;
+  const tot=Math.max(0,sub-disc);
+  const order={
+    id:"ORD-"+Date.now().toString(36).toUpperCase(),
+    productId:currentProduct.id,productName:currentProduct.name,
+    variantName:currentVariant.name,qty:currentQty,price:currentVariant.price,
+    subtotal:sub,discount:disc,finalTotal:tot,
+    voucherCode:appliedVoucher?appliedVoucher.code:null,
+    userName:name,userContact:contact,channel,createdAt:Date.now(),status:"pending"
+  };
+  saveOrder(order);
+  const msg=`Halo REYY STORE, saya mau order:\n\n📦 Produk: ${currentProduct.name}\n🏷️ Varian: ${currentVariant.name}\n🔢 Qty: ${currentQty}\n💰 Subtotal: ${formatRupiah(sub)}\n`+(appliedVoucher?`🎟️ Voucher: ${appliedVoucher.code} (-${formatRupiah(disc)})\n`:"")+`💵 Total: ${formatRupiah(tot)}\n👤 Nama: ${name}\n📱 Contact: ${contact}\n📨 Channel: ${channel}`;
+  const target=channel==="telegram"?`https://t.me/${TG_USER}?text=${encodeURIComponent(msg)}`:`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  showToast("Order disimpan! Lanjut ke "+(channel==="telegram"?"Telegram":"WhatsApp")+"...","success");
+  setTimeout(()=>{window.open(target,"_blank","noopener");buyModal.classList.remove("active")},900);
+});
+
+function closeModal(m){m.classList.remove("active")}
+
+document.getElementById("buyModalClose").addEventListener("click",()=>closeModal(buyModal));
+buyModal.addEventListener("click",e=>{if(e.target===buyModal)closeModal(buyModal)});
+
+const reviewsModal=document.getElementById("reviewsModal");
+document.getElementById("showAllReviewsBtn").addEventListener("click",()=>{renderBreakdown();reviewsModal.classList.add("active")});
+document.getElementById("reviewsModalClose").addEventListener("click",()=>closeModal(reviewsModal));
+reviewsModal.addEventListener("click",e=>{if(e.target===reviewsModal)closeModal(reviewsModal)});
+
+document.querySelectorAll(".filter-btn").forEach(b=>{
+  b.addEventListener("click",()=>{
+    document.querySelectorAll(".filter-btn").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    currentFilter=b.dataset.filter;
+    renderProducts();
+  });
+});
+document.getElementById("searchInput").addEventListener("input",e=>{currentSearch=e.target.value;renderProducts()});
+
+document.getElementById("promoBtn").addEventListener("click",()=>document.getElementById("produk").scrollIntoView({behavior:"smooth"}));
+
+const authModal=document.getElementById("authModal");
+const userBtn=document.getElementById("userBtn");
+const authClose=document.getElementById("authClose");
+const authForm=document.getElementById("authForm");
+const authTitle=document.getElementById("authTitle");
+const authSub=document.getElementById("authSub");
+const authSubmit=document.getElementById("authSubmit");
+const authName=document.getElementById("authName");
+const authEmail=document.getElementById("authEmail");
+const authPassword=document.getElementById("authPassword");
+const authToggle=document.getElementById("authToggle");
+const authError=document.getElementById("authError");
+const googleBtn=document.getElementById("googleBtn");
+const logoutBtn=document.getElementById("logoutBtn");
+const authLoggedOut=document.getElementById("authLoggedOut");
+const authLoggedIn=document.getElementById("authLoggedIn");
+const pwToggle=document.getElementById("pwToggle");
+const forgotLink=document.getElementById("forgotLink");
+
+let isSignUpMode=false,fb=null;
+
+pwToggle.addEventListener("click",()=>{
+  const r=authPassword.type==="text";
+  authPassword.type=r?"password":"text";
+  pwToggle.classList.toggle("revealed",!r);
+});
+function showAuthError(m){authError.textContent=m;authError.classList.add("show")}
+function clearAuthError(){authError.classList.remove("show");authError.textContent=""}
+
+userBtn.addEventListener("click",()=>{if(currentUser)openProfileModal();else authModal.classList.add("active")});
+authClose.addEventListener("click",()=>closeModal(authModal));
+authModal.addEventListener("click",e=>{if(e.target===authModal)closeModal(authModal)});
+
+authToggle.addEventListener("click",e=>{
+  e.preventDefault();clearAuthError();isSignUpMode=!isSignUpMode;
+  if(isSignUpMode){
+    authTitle.textContent="Daftar Akun Baru";
+    authSub.textContent="Bikin akun buat checkout & dapet promo member.";
+    authSubmit.innerHTML=`<svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Daftar`;
+    authName.classList.remove("is-hidden");
+    authToggle.textContent="Login";
+  }else{
+    authTitle.textContent="Masuk ke Akun";
+    authSub.textContent="Login untuk melihat riwayat pembelian key kamu";
+    authSubmit.innerHTML=`<svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Masuk`;
+    authName.classList.add("is-hidden");
+    authToggle.textContent="Daftar";
+  }
+});
+
+authForm.addEventListener("submit",async e=>{
+  e.preventDefault();clearAuthError();
+  if(!fb){showAuthError("Firebase belum siap. Tunggu sebentar lalu coba lagi.");return}
+  const email=authEmail.value.trim(),password=authPassword.value;
+  try{
+    if(isSignUpMode){
+      const n=authName.value.trim();
+      const c=await fb.createUserWithEmailAndPassword(fb.auth,email,password);
+      if(n)await fb.updateProfile(c.user,{displayName:n});
+    }else{
+      await fb.signInWithEmailAndPassword(fb.auth,email,password);
+    }
+    authForm.reset();
+    pwToggle.classList.remove("revealed");
+    authPassword.type="password";
+    authModal.classList.remove("active");
+    showToast("Login berhasil! Selamat datang 👋","success");
+  }catch(err){
+    const m={
+      "auth/email-already-in-use":"Email udah kepake. Coba login aja.",
+      "auth/invalid-email":"Format email salah.",
+      "auth/weak-password":"Password kurang dari 6 karakter.",
+      "auth/user-not-found":"Akun gak ketemu. Daftar dulu.",
+      "auth/wrong-password":"Password salah.",
+      "auth/invalid-credential":"Email atau password salah.",
+      "auth/too-many-requests":"Kebanyakan coba login. Tunggu sebentar.",
+      "auth/unauthorized-domain":"Domain belum diizinin di Firebase Console."
+    };
+    showAuthError(m[err.code]||err.message);
+  }
+});
+
+forgotLink.addEventListener("click",async e=>{
+  e.preventDefault();clearAuthError();
+  const email=authEmail.value.trim();
+  if(!email){showAuthError("Isi email dulu buat reset password.");return}
+  if(!fb){showAuthError("Firebase belum siap.");return}
+  try{
+    const{sendPasswordResetEmail}=await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js");
+    await sendPasswordResetEmail(fb.auth,email);
+    showToast("Link reset password dikirim ke email kamu.","success");
+  }catch(err){showAuthError(err.message||"Gagal kirim link reset.")}
+});
+
+googleBtn.addEventListener("click",async()=>{
+  clearAuthError();
+  if(!fb){showAuthError("Firebase belum siap.");return}
+  try{
+    await fb.signInWithPopup(fb.auth,new fb.GoogleAuthProvider());
+    authModal.classList.remove("active");
+    showToast("Login Google berhasil!","success");
+  }catch(err){
+    if(err.code!=="auth/popup-closed-by-user")
+      showAuthError(err.code==="auth/unauthorized-domain"?"Domain belum diizinin di Firebase Console.":err.message);
+  }
+});
+
+logoutBtn.addEventListener("click",async()=>{if(!fb)return;await fb.signOut(fb.auth);closeModal(authModal);showToast("Logout berhasil","info")});
+
+window.addEventListener("firebase-ready",e=>{
+  fb=e.detail;
+  fb.onAuthStateChanged(fb.auth,user=>{
+    currentUser=user;
+    if(user){
+      const initial=user.displayName?user.displayName.charAt(0).toUpperCase():"?";
+      userBtn.innerHTML=`<span style="font-weight:900;font-size:0.95rem;color:#fff">${initial}</span>`;
+      userBtn.style.background="linear-gradient(135deg,#22c55e,#16a34a)";
+      document.getElementById("userName").textContent=user.displayName||"Member REYY";
+      document.getElementById("userEmail").textContent=user.email;
+      const av=document.getElementById("userAvatar");
+      if(user.photoURL)av.innerHTML=`<img src="${esc(user.photoURL)}" alt="avatar">`;
+      else av.textContent=(user.displayName||user.email).charAt(0).toUpperCase();
+      authLoggedOut.style.display="none";
+      authLoggedIn.classList.remove("is-hidden");
+    }else{
+      userBtn.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+      userBtn.style.background="";
+      authLoggedOut.style.display="block";
+      authLoggedIn.classList.add("is-hidden");
+    }
+  });
+},{once:true});
+
+const profileModal=document.getElementById("profileModal");
+document.getElementById("profileClose").addEventListener("click",()=>closeModal(profileModal));
+profileModal.addEventListener("click",e=>{if(e.target===profileModal)closeModal(profileModal)});
+
+document.querySelectorAll(".profile-tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".profile-tab").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".profile-panel").forEach(x=>x.classList.remove("active"));
+  t.classList.add("active");
+  document.getElementById(t.dataset.tab==="orders"?"panelOrders":"panelSettings").classList.add("active");
+}));
+
+document.getElementById("profileLogoutBtn").addEventListener("click",async()=>{if(!fb)return;await fb.signOut(fb.auth);closeModal(profileModal);showToast("Logout berhasil","info")});
+document.getElementById("profileClearHistoryBtn").addEventListener("click",()=>{
+  if(confirm("Yakin hapus semua riwayat order? Tindakan ini gak bisa dibatalin.")){
+    clearOrders();renderOrderHistory();updateProfileStats();
+    showToast("Riwayat order dihapus","info");
+  }
+});
+
+function openProfileModal(){
+  if(!currentUser)return;
+  document.getElementById("profileName").textContent=currentUser.displayName||"Member REYY";
+  document.getElementById("profileEmail").textContent=currentUser.email;
+  const pav=document.getElementById("profileAvatar");
+  if(currentUser.photoURL)pav.innerHTML=`<img src="${esc(currentUser.photoURL)}" alt="avatar">`;
+  else pav.textContent=(currentUser.displayName||currentUser.email).charAt(0).toUpperCase();
+  updateProfileStats();renderOrderHistory();
+  document.querySelectorAll(".profile-tab").forEach((t,i)=>t.classList.toggle("active",i===0));
+  document.querySelectorAll(".profile-panel").forEach((p,i)=>p.classList.toggle("active",i===0));
+  profileModal.classList.add("active");
+}
+
+function updateProfileStats(){
+  const s=getOrderStats();
+  document.getElementById("statOrders").textContent=s.count;
+  document.getElementById("statSpending").textContent=formatRupiah(s.total);
+}
+
+function renderOrderHistory(){
+  const list=document.getElementById("orderList"),orders=loadOrders();
+  if(!orders.length){
+    list.innerHTML=`<div class="empty-state"><div class="empty-state-icon">📭</div><div class="empty-state-text">Belum ada order nih, Bos.<br>Order pertama lu bakal muncul di sini.</div></div>`;
+    return;
+  }
+  list.innerHTML=orders.map(o=>{
+    const d=new Date(o.createdAt);
+    const ds=d.toLocaleDateString("id-ID",{day:"2-digit",month:"short",year:"numeric"})+" • "+d.toLocaleTimeString("id-ID",{hour:"2-digit",minute:"2-digit"});
+    return`<div class="order-card">
+      <div class="order-card-top"><span class="order-id">#${esc(o.id)}</span><span class="order-date">${esc(ds)}</span></div>
+      <div class="order-product">${esc(o.productName)}</div>
+      <div class="order-variant">${esc(o.variantName)} × ${o.qty}</div>
+      <div class="order-footer">
+        <span class="order-price">${formatRupiah(o.finalTotal)}</span>
+        <span class="order-status ${o.status}">${o.status==="pending"?"⏳ Pending":o.status==="paid"?"✅ Paid":"❌ Batal"}</span>
+      </div>
+      <button class="order-reorder-btn" data-reorder-product="${o.productId}" data-reorder-variant="${esc(o.variantName)}">🔄 Beli Lagi</button>
+    </div>`;
+  }).join("");
+  list.querySelectorAll(".order-reorder-btn").forEach(b=>b.addEventListener("click",()=>{
+    const p=PRODUCTS.find(x=>x.id===parseInt(b.dataset.reorderProduct,10));
+    if(!p){showToast("Produk udah gak tersedia","error");return}
+    closeModal(profileModal);openBuyModal(p);
+    const vn=b.dataset.reorderVariant;
+    setTimeout(()=>{const i=p.variants.findIndex(v=>v.name===vn);if(i>=0)selectVariant(i)},100);
+  }));
+}
+
+injectStaticSvgStars();
+renderProducts();
+</script>
+</body>
+</html>
